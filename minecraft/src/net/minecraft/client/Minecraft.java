@@ -906,6 +906,7 @@ public abstract class Minecraft implements Runnable {
 	}
 
 	private void clickMiddleMouseButton() {
+		this.thePlayer.addChatMessage("middle mouse");
 		if(this.objectMouseOver != null) {
 			int var1 = this.theWorld.getBlockId(this.objectMouseOver.blockX, this.objectMouseOver.blockY, this.objectMouseOver.blockZ);
 			if(var1 == Block.grass.blockID) {
@@ -920,7 +921,7 @@ public abstract class Minecraft implements Runnable {
 				var1 = Block.stone.blockID;
 			}
 
-			this.thePlayer.inventory.setCurrentItem(var1, this.playerController instanceof PlayerControllerTest);
+			this.thePlayer.inventory.setCurrentItem(var1, true);
 		}
 
 	}
@@ -997,14 +998,20 @@ public abstract class Minecraft implements Runnable {
 										do {
 											if(!Keyboard.next()) {
 												if(this.currentScreen == null) {
-													if(Mouse.isButtonDown(0) && (float)(this.ticksRan - this.mouseTicksRan) >= this.timer.ticksPerSecond / 4.0F && this.inGameHasFocus) {
-														this.clickMouse(0);
-														this.mouseTicksRan = this.ticksRan;
-													}
+													if ((float)(this.ticksRan - this.mouseTicksRan) >= this.timer.ticksPerSecond / 4.0F && this.inGameHasFocus){
+														if(Mouse.isButtonDown(0)) {
+															this.clickMouse(0);
+															this.mouseTicksRan = this.ticksRan;
+														}
 
-													if(Mouse.isButtonDown(1) && (float)(this.ticksRan - this.mouseTicksRan) >= this.timer.ticksPerSecond / 4.0F && this.inGameHasFocus) {
-														this.clickMouse(1);
-														this.mouseTicksRan = this.ticksRan;
+														if(Mouse.isButtonDown(1)) {
+															this.clickMouse(1);
+															this.mouseTicksRan = this.ticksRan;
+														}
+
+														if(Mouse.isButtonDown(2)) {
+															this.clickMiddleMouseButton();
+														}
 													}
 												}
 
