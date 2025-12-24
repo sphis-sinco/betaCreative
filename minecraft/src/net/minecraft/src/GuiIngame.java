@@ -74,62 +74,21 @@ public class GuiIngame extends Gui {
 			int var18;
 			for(var16 = 0; var16 < 10; ++var16) {
 				var17 = var7 - 32;
-				if(var15 > 0) {
+				if(var15 > 0)
 					var18 = var6 / 2 + 91 - var16 * 8 - 9;
-					if(var16 * 2 + 1 < var15) {
-						this.drawTexturedModalRect(var18, var17, 34, 9, 9, 9);
-					}
-
-					if(var16 * 2 + 1 == var15) {
-						this.drawTexturedModalRect(var18, var17, 25, 9, 9, 9);
-					}
-
-					if(var16 * 2 + 1 > var15) {
-						this.drawTexturedModalRect(var18, var17, 16, 9, 9, 9);
-					}
-				}
 
 				byte var28 = 0;
-				if(var12) {
+				if(var12)
 					var28 = 1;
-				}
 
 				int var19 = var6 / 2 - 91 + var16 * 8;
-				if(var13 <= 4) {
+				if(var13 <= 4)
 					var17 += this.rand.nextInt(2);
-				}
-
-				this.drawTexturedModalRect(var19, var17, 16 + var28 * 9, 0, 9, 9);
-				if(var12) {
-					if(var16 * 2 + 1 < var14) {
-						this.drawTexturedModalRect(var19, var17, 70, 0, 9, 9);
-					}
-
-					if(var16 * 2 + 1 == var14) {
-						this.drawTexturedModalRect(var19, var17, 79, 0, 9, 9);
-					}
-				}
-
-				if(var16 * 2 + 1 < var13) {
-					this.drawTexturedModalRect(var19, var17, 52, 0, 9, 9);
-				}
-
-				if(var16 * 2 + 1 == var13) {
-					this.drawTexturedModalRect(var19, var17, 61, 0, 9, 9);
-				}
 			}
 
 			if(this.mc.thePlayer.isInsideOfMaterial(Material.water)) {
 				var16 = (int)Math.ceil((double)(this.mc.thePlayer.air - 2) * 10.0D / 300.0D);
 				var17 = (int)Math.ceil((double)this.mc.thePlayer.air * 10.0D / 300.0D) - var16;
-
-				for(var18 = 0; var18 < var16 + var17; ++var18) {
-					if(var18 < var16) {
-						this.drawTexturedModalRect(var6 / 2 - 91 + var18 * 8, var7 - 32 - 9, 16, 18, 9, 9);
-					} else {
-						this.drawTexturedModalRect(var6 / 2 - 91 + var18 * 8, var7 - 32 - 9, 25, 18, 9, 9);
-					}
-				}
 			}
 		}
 
