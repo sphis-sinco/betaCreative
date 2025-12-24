@@ -26,7 +26,7 @@ public class EntityMob extends EntityCreature implements IMob {
 	}
 
 	protected Entity findPlayerToAttack() {
-		return false;
+		return null;
 	}
 
 	public boolean attackEntityFrom(Entity var1, int var2) {
