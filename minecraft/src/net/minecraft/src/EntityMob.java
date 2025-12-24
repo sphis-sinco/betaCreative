@@ -26,14 +26,15 @@ public class EntityMob extends EntityCreature implements IMob {
 	}
 
 	protected Entity findPlayerToAttack() {
-		EntityPlayer var1 = this.worldObj.getClosestPlayerToEntity(this, 16.0D);
-		return var1 != null && this.canEntityBeSeen(var1) ? var1 : null;
+		return false;
 	}
 
 	public boolean attackEntityFrom(Entity var1, int var2) {
 		if(super.attackEntityFrom(var1, var2)) {
 			if(this.riddenByEntity != var1 && this.ridingEntity != var1) {
+				
 				if(var1 != this) {
+					if (!this.worldObj.playerEntities.contains(var1))
 					this.playerToAttack = var1;
 				}
 

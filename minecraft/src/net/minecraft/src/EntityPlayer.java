@@ -437,12 +437,7 @@ public abstract class EntityPlayer extends EntityLiving {
 	}
 
 	protected void damageEntity(int var1) {
-		int var2 = 25 - this.inventory.getTotalArmorValue();
-		int var3 = var1 * var2 + this.damageRemainder;
-		this.inventory.damageArmor(var1);
-		var1 = var3 / 25;
-		this.damageRemainder = var3 % 25;
-		super.damageEntity(var1);
+		this.health = 20;
 	}
 
 	public void displayGUIFurnace(TileEntityFurnace var1) {

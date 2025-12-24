@@ -146,20 +146,7 @@ public class EntityPlayerSP extends EntityPlayer {
 	}
 
 	public void setHealth(int var1) {
-		int var2 = this.health - var1;
-		if(var2 <= 0) {
-			this.health = var1;
-			if(var2 < 0) {
-				this.heartsLife = this.heartsHalvesLife / 2;
-			}
-		} else {
-			this.field_9346_af = var2;
-			this.prevHealth = this.health;
-			this.heartsLife = this.heartsHalvesLife;
-			this.damageEntity(var2);
-			this.hurtTime = this.maxHurtTime = 10;
-		}
-
+		this.health = 20;
 	}
 
 	public void respawnPlayer() {
